@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Fitness</string>
+    <string name="nav_title">Fitness</string>
+    <string name="meals">Meals</string>
+    <string name="workout">Workout</string>
+    <string name="diet">Diet</string>
+    <string name="blogs">Blogs</string>
+
+    <string name="hotel1_name">Meridien</string>
+    <string name="hotel1_address">51 El-Orouba, Almazah, Heliopolis, Cairo Governorate</string>
+    <string name="hotel1_phone">0222905055</string>
+    <string name="hotel2_name">Kempinski</string>
+    <string name="hotel2_address">Ring Rd, Cairo Governorate</string>
+    <string name="hotel2_phone">02 22495300</string>
+    <string name="hotel3_name">JW Marriott</string>
+    <string name="hotel3_address">Ring Road- Mirage City, Heliopolis, Cairo Governorate</string>
+    <string name="hotel3_phone">0224115588</string>
+
+    <string name="monument1_name">قلعة قايت</string>
+    <string name="monument2_address">As Sayalah Sharq, Qesm Al Gomrok, Alexandria Governorate</string>
+    <string name="monument2_name">Mosque of Muhammad Ali</string>
+    <string name="munument2_address">Al Abageyah, Qesm Al Khalifah، Cairo Governorate</string>
+    <string name="monument3_name">The Hanging Church</string>
+    <string name="monument3_address">Kom Ghorab, Misr Al Qadimah, Cairo Governorate</string>
+
+    <string name="museum1_name">The Egyptian Museum</string>
+    <string name="museum1_address">15 Meret Basha, Ismailia, Qasr an Nile, Cairo Governorate</string>
+    <string name="museum2_name">The Coptic Museum</string>
+    <string name="museum2_address">3 Mari Gerges, Kom Ghorab, Misr Al Qadimah, Cairo Governorate</string>
+    <string name="museum3_name">The Islamic Museum</string>
+    <string name="museum3_address">Bab Al Khalq Square, Ghayt Al Adah, Abdeen, Cairo Governorate</string>
+
+    <string name="mall1_name">Cairo Festival City Mall</string>
+    <string name="mall1_address">Fifth Settlement Road، NEW Cairo، Cairo Governorate</string>
+    <string name="mall2_name">Mall Of Egypt</string>
+    <string name="mall2_address">Giza- Al Wahat Al Baharia, Giza Governorate</string>
+    <string name="mall3_name">Mall Of Arabia</string>
+    <string name="mall3_address">26th of July Corridor, Giza Governorate</string>
+</resources>
