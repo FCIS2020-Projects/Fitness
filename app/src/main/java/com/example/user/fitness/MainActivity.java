@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                         fragment = new WorkoutFragment();
                         break;
                     case R.id.dite:
-                        fragment = new DiteFragment();
+                        fragment = new DietFragment();
                         break;
                     case R.id.blogs:
                         fragment = new BlogFragment();

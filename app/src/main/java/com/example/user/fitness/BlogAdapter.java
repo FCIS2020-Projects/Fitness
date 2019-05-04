@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.user.fitness.Database.DbHelper;
@@ -24,7 +23,7 @@ public class BlogAdapter extends ArrayAdapter<Blog> {
         ViewHolder viewHolder;
         if(convertView == null)
         {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item,parent,false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.blog_list_item,parent,false);
             viewHolder = new ViewHolder(convertView);
             convertView.setTag(viewHolder);
         }
