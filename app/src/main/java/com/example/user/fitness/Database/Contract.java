@@ -11,4 +11,9 @@ public class Contract {
         public static String COLUMN_BODY = "Body";
     }
 
+    public  static class UserEntry implements BaseColumns{
+        public static String TABLE_NAME = "Users";
+        public static String COLUMN_EMAIL = "Email";
+        public static String COLUMN_PASSWORD = "Password";
+    }
 }

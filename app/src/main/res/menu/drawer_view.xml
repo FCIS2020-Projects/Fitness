@@ -14,5 +14,8 @@
         <item
             android:id="@+id/blogs"
             android:title="@string/blogs"/>
+        <item
+            android:id="@+id/logout"
+            android:title="@string/logout"/>
     </group>
 </menu>

@@ -1,5 +1,6 @@
 package com.example.user.fitness;
 
+import android.content.SharedPreferences;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -16,6 +17,8 @@ public class MainActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
+    SharedPreferences sharedPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar);
+        sharedPreferences = getSharedPreferences(getString(R.string.shared_pref),MODE_PRIVATE);
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected( MenuItem item) {
@@ -43,6 +48,13 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.blogs:
                         fragment = new BlogFragment();
                         break;
+                    case R.id.logout:
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putBoolean(getString(R.string.auto_login),false);
+                        editor.commit();
+                        finish();
+                        break;
+
                 }
 
                 fragmentManager.beginTransaction().replace(R.id.content_frame,fragment).commit();
@@ -63,6 +75,11 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.content_frame,new MealsFragment()).commit();
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 
     @Override
