@@ -3,10 +3,13 @@ package com.example.user.fitness;
 public class User {
     private String mEmail;
     private String mPassword;
+    private int mDailyCalories;
 
-    public User(String mEmail, String mPassword) {
-        this.mEmail = mEmail;
-        this.mPassword = mPassword;
+
+    public User(String email, String password, int dailyCalories) {
+        mEmail = email;
+        mPassword = password;
+        mDailyCalories = dailyCalories;
     }
 
     public String getmEmail() {
@@ -23,5 +26,13 @@ public class User {
 
     public void setmPassword(String mPassword) {
         this.mPassword = mPassword;
+    }
+
+    public int getmDailyCalories() {
+        return mDailyCalories;
+    }
+
+    public void setmDailyCalories(int mDailyCalories) {
+        this.mDailyCalories = mDailyCalories;
     }
 }

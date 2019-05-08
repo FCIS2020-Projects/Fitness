@@ -11,6 +11,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
+
+import com.example.user.fitness.Database.DbHelper;
+
+import java.text.DateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     NavigationView navigationView;
     Toolbar toolbar;
     SharedPreferences sharedPreferences;
+    TextView caloriesLeft;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar);
+
+        View navHeader = navigationView.getHeaderView(0);
+        caloriesLeft = navHeader.findViewById(R.id.user_calories_left);
+
         sharedPreferences = getSharedPreferences(getString(R.string.shared_pref),MODE_PRIVATE);
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -67,6 +80,9 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+        setCaloriesLeft();
+
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
@@ -77,6 +93,19 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void setCaloriesLeft()
+    {
+        DbHelper dbHelper = new DbHelper(this);
+        String userEmail = sharedPreferences.getString(getString(R.string.email), "");
+        int calories = dbHelper.getUser(userEmail).getmDailyCalories();
+        DateFormat df = DateFormat.getDateInstance();
+        ArrayList<Meal> todayMeals = dbHelper.getMeals(userEmail, df.format(Calendar.getInstance().getTime()));
+        for(int i = 0 ; i < todayMeals.size() ; i++)
+        {
+            calories -= todayMeals.get(i).getmCalories();
+        }
+        caloriesLeft.setText(String.valueOf(calories));
+    }
     @Override
     public void onBackPressed() {
         finish();
@@ -87,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
         switch(item.getItemId())
         {
             case android.R.id.home:
+                setCaloriesLeft();
                 drawerLayout.openDrawer(GravityCompat.START);
                 return true;
         }

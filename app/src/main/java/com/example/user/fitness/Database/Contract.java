@@ -15,5 +15,14 @@ public class Contract {
         public static String TABLE_NAME = "Users";
         public static String COLUMN_EMAIL = "Email";
         public static String COLUMN_PASSWORD = "Password";
+        public static String COLUMN_CALORIES = "Calories";
+    }
+
+    public  static class MealEntry implements BaseColumns{
+        public static String TABLE_NAME = "Meals";
+        public static String COLUMN_NAME = "Name";
+        public static String COLUMN_CALORIES = "Calories";
+        public static String COLUMN_DATE = "Date";
+        public static String COLUMN_USER = "UserEmail";
     }
 }

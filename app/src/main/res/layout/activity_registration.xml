@@ -14,18 +14,10 @@
         android:orientation="horizontal">
         <EditText
             android:id="@+id/register_email"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:inputType="textEmailAddress"
             android:hint="Email"/>
-        <EditText
-            android:id="@+id/register_confirm_email"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:inputType="textEmailAddress"
-            android:hint="Confirm Email"/>
 
     </LinearLayout>
 
@@ -49,6 +41,57 @@
             android:hint="Confirm Password"/>
 
     </LinearLayout>
+
+
+    <RadioGroup
+        android:id="@+id/gender_radio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gender:"/>
+        <RadioButton
+            android:id="@+id/gender_male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Male"/>
+        <RadioButton
+            android:id="@+id/gender_female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female"/>
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/goal_radio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Goal:"/>
+        <RadioButton
+            android:id="@+id/goal_mantain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mantain"/>
+        <RadioButton
+            android:id="@+id/goal_gain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gain"/>
+
+        <RadioButton
+            android:id="@+id/goal_lose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lose"/>
+    </RadioGroup>
 
     <Button
         android:id="@+id/register_btn"
